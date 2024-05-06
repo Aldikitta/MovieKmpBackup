@@ -19,25 +19,19 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "home"
+            baseName = "mapper"
             isStatic = true
         }
     }
 
     sourceSets {
-        androidMain.dependencies {
-            implementation(libs.compose.ui.tooling.preview)
-            implementation(libs.androidx.activity.compose)
-        }
         commonMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
+            //put your multiplatform dependencies here
 
-            implementation(libs.navigation.compose)
+            implementation(project(":core:model"))
+            implementation(project(":core:dto"))
+
+            implementation(compose.ui)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -46,7 +40,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.aldikitta.feature.home"
+    namespace = "com.aldikitta.core.mapper"
     compileSdk = 34
     defaultConfig {
         minSdk = 24

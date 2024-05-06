@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.jetbrainsCompose)
+    kotlin("plugin.serialization") version "1.9.20"
 }
 
 kotlin {
@@ -19,25 +20,16 @@ kotlin {
         iosSimulatorArm64()
     ).forEach {
         it.binaries.framework {
-            baseName = "home"
+            baseName = "model"
             isStatic = true
         }
     }
 
     sourceSets {
-        androidMain.dependencies {
-            implementation(libs.compose.ui.tooling.preview)
-            implementation(libs.androidx.activity.compose)
-        }
         commonMain.dependencies {
-            implementation(compose.runtime)
-            implementation(compose.foundation)
-            implementation(compose.material)
-            implementation(compose.ui)
-            implementation(compose.components.resources)
-            implementation(compose.components.uiToolingPreview)
+            //put your multiplatform dependencies here
 
-            implementation(libs.navigation.compose)
+            implementation(compose.ui)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -46,7 +38,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.aldikitta.feature.home"
+    namespace = "com.aldikitta.core.model"
     compileSdk = 34
     defaultConfig {
         minSdk = 24

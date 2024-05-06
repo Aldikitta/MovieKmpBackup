@@ -30,3 +30,10 @@ dependencyResolutionManagement {
 
 include(":composeApp")
 include(":feature:home")
+include(":core:data")
+include(":core:domain")
+include(":core:model")
+include(":core:dto")
+include(":core:mapper")
+include(":core:utils")
+include(":feature:detail")
