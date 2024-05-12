@@ -1,4 +1,4 @@
-package org.aldikitta.moviekmp
+package com.aldikitta.moviekmp
 
 import App
 import android.os.Bundle

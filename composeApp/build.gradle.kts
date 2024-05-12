@@ -31,10 +31,10 @@ kotlin {
             implementation(libs.androidx.activity.compose)
         }
         commonMain.dependencies {
-            implementation(project(":feature:home"))
-            implementation(project(":feature:detail"))
-            implementation(project(":core:data"))
-            implementation(project(":core:domain"))
+//            implementation(project(":feature:home"))
+//            implementation(project(":feature:detail"))
+//            implementation(project(":core:data"))
+//            implementation(project(":core:domain"))
             implementation(compose.runtime)
             implementation(compose.foundation)
             implementation(compose.material)
@@ -52,7 +52,7 @@ kotlin {
 }
 
 android {
-    namespace = "org.aldikitta.moviekmp"
+    namespace = "com.aldikitta.moviekmp"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -60,7 +60,7 @@ android {
     sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
     defaultConfig {
-        applicationId = "org.aldikitta.moviekmp"
+        applicationId = "com.aldikitta.moviekmp"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
